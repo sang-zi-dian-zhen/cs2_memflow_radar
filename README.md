@@ -3,7 +3,7 @@
  > ### 基于[cs2-dma-radar](https://github.com/rabume/cs2-dma-radar)
  > ### 使用AI重构为rust并使用memflow访问内存
 
-### 视频教程	:	待定
+### 视频教程	:	[CS2网页雷达使用memflow访问内存](https://www.bilibili.com/video/BV1JBj664E3Y)
 ### 文字教程	:	
 
 
@@ -12,11 +12,13 @@
 sudo apt install cargo
 cargo install memflowup
 
+#root用户
+sudo su
 nano ~/.bashrc
-export PATH=/home/??用户名/.cargo/bin:$PATH
+export PATH=/home/??普通用户名/.cargo/bin:$PATH	#末尾添加
 source ~/.bashrc
 
-sudo memflowup pull --all	#安装到root用户
+memflowup pull --all	#安装到root用户
 ```
 
 
@@ -51,7 +53,7 @@ sudo ./target/release/cs2_radar -c qemu -o win32
 
 - 与之配套	[QEMU全仿真](https://github.com/sang-zi-dian-zhen/QEMU-virtual-machine-full-emulation-passes-pafish-testing)
   > 仓库属于	烟雨平生	UID : 421033640  
-  > 桑梓店镇		UID : 1081527516  已测试2026-06-17\[5E平台]  
+  > 桑梓店镇		UID : 1081527516  已测试2026-06-20\[5E平台]  
 
 
 
