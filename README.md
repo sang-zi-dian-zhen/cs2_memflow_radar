@@ -14,6 +14,7 @@ cargo install memflowup
 
 #root用户
 sudo su
+
 nano ~/.bashrc
 export PATH=/home/??普通用户名/.cargo/bin:$PATH	#末尾添加后保存退出
 source ~/.bashrc
