@@ -41,8 +41,8 @@ sudo ./target/release/cs2_radar -c qemu -o win32
 
 ### [无法找到 dtb](https://github.com/memflow/memflow/issues/100)	可更改为memflow-kvm连接器
 ### 2026-06-26  [memflow-dkms](https://github.com/memflow/memflow-kvm/releases)模块未适配内核7.0+
-### memflow-kvm连接器	:	
 ### GRUB引导菜单选择6.12.86+deb13-amd64内核启动
+### memflow-kvm连接器	:	
 
 ```
 uname -r	#验证内核版本是否为 6.12.86+deb13-amd64
