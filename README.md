@@ -47,9 +47,9 @@ sudo ./target/release/cs2_radar -c qemu -o win32
 ```
 uname -r	#验证内核版本是否为 6.12.86+deb13-amd64
 
-sudo nano /etc/apt/sources.list	#testing -> trixie
+sudo nano /etc/apt/sources.list		#testing -> trixie
 
-sudo apt install libelf1t64=0.192-4	#降级依赖
+sudo apt install libelf1t64=0.192-4		#降级依赖
 sudo apt install linux-headers-6.12.86+deb13-amd64
 
 sudo apt install dkms
