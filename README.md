@@ -54,9 +54,9 @@ sudo apt install linux-headers-6.12.86+deb13-amd64
 
 sudo apt install dkms
 sudo dpkg -i ??/memflow-dkms_?.?.?_all.deb
-sudo modprobe memflow	#临时-重启消失
 
 #VM里ssh连接运行
+sudo modprobe memflow	#临时-重启消失
 cd ??/cs2_memflow_radar
 sudo ./target/release/cs2_radar -c kvm -o win32
 ```
