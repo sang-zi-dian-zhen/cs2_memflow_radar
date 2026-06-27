@@ -40,23 +40,19 @@ sudo ./target/release/cs2_radar -c qemu -o win32
 ```
 
 ### [无法找到 dtb](https://github.com/memflow/memflow/issues/100)	可更改为memflow-kvm连接器
-### 2026-06-26  [memflow-dkms](https://github.com/memflow/memflow-kvm/releases)模块未适配内核7.0+
-### GRUB引导菜单选择6.12.86+deb13-amd64内核启动
+### [memflow-kvm](https://github.com/memflow/memflow-kvm)模块未适配内核7.0+
+### 使用仓库提供的[memflow.ko](memflow.ko)已适配内核7.0+[源码修改](源码修改)
 ### memflow-kvm连接器	:	
 
 ```
-uname -r	#验证内核版本是否为 6.12.86+deb13-amd64
+sudo mkdir -p /lib/modules/$(uname -r)/extra
+sudo cp ??/memflow.ko /lib/modules/$(uname -r)/extra/
 
-sudo nano /etc/apt/sources.list		#testing -> trixie
-
-sudo apt install libelf1t64=0.192-4		#降级依赖
-sudo apt install linux-headers-6.12.86+deb13-amd64
-
-sudo apt install dkms
-sudo dpkg -i ??/memflow-dkms_?.?.?_all.deb
+sudo depmod -a
+sudo modprobe memflow
+echo "memflow" | sudo tee /etc/modules-load.d/memflow.conf	#设置开机自启
 
 #VM里ssh连接运行
-sudo modprobe memflow	#临时-重启消失
 cd ??/cs2_memflow_radar
 sudo ./target/release/cs2_radar -c kvm -o win32
 ```

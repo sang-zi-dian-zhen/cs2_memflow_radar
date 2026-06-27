@@ -1,0 +1,9 @@
+源码修改适配内核
+
+??/memflow-kvm/memflow-kmod/vmtools.c
+
+    return mm_get_unmapped_area(data->wrapped_task->mm, data->wrapped_vma->vm_file, addr, len, pgoff + data->wrapped_vma->vm_pgoff, flags);
+改为：
+    return mm_get_unmapped_area(data->wrapped_vma->vm_file, addr, len, pgoff + data->wrapped_vma->vm_pgoff, flags);
+
+
